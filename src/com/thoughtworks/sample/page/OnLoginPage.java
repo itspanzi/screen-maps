@@ -3,20 +3,27 @@ package com.thoughtworks.sample.page;
 import com.thoughtworks.sample.driver.Browser;
 import com.thoughtworks.sample.driver.Element;
 import com.thoughtworks.sample.states.CurrentPageState;
-import com.thoughtworks.sample.states.Page;
+import com.thoughtworks.sample.states.PageName;
 
 /**
- * @understands The represenation of the login page of the application
+ * @understands The representation of the login page of the application
  */
-public class OnLoginPage {
+public class OnLoginPage extends Page {
 
-    private Browser browser;
-    private CurrentPageState currentPageState;
+    public static final String URL = "/app/login";
 
     public OnLoginPage(Browser browser, CurrentPageState currentPageState) {
-        this.browser = browser;
-        this.currentPageState = currentPageState;
-        currentPageState.onPage(Page.LOGIN_PAGE);
+        super(browser, currentPageState);
+    }
+
+    @Override
+    protected void setCurrentPageState(CurrentPageState currentPageState) {
+        currentPageState.onPage(PageName.LOGIN_PAGE);
+    }
+
+    @Override
+    protected void open() {
+        browser.navigateTo(URL);
     }
 
     public void enterUserNameAndPassword(String username, String password) {
@@ -34,11 +41,11 @@ public class OnLoginPage {
 
     public OnHomePage submit() {
         elementSubmit().click();
-        currentPageState.onPage(Page.HOME_PAGE);
+        currentPageState.onPage(PageName.HOME_PAGE);
         return new AlreadyOnHomePage(browser, currentPageState);
     }
 
     private Element elementSubmit() {
-        return null;
+        return browser.submit("submit_login");
     }
 }

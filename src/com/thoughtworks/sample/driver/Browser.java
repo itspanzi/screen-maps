@@ -4,9 +4,17 @@ package com.thoughtworks.sample.driver;
  * @understands The abstraction of a Browser in a testing driver
  */
 public interface Browser {
-    Element text(String usernameLocator);
+    void navigateTo(String url);
 
-    Element password(String passwordLocator);
+    String getUrl();
+
+    Element text(String locator);
+
+    Element password(String locator);
 
     Element div(String locator);
+
+    Element link(String locator);
+
+    Element submit(String locator);
 }
