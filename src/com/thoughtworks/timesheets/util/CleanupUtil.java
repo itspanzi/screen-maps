@@ -1,8 +1,8 @@
-package com.thoughtworks.util;
+package com.thoughtworks.timesheets.util;
 
-import com.thoughtworks.sample.driver.Browser;
-import com.thoughtworks.sample.framework.Autowired;
-import com.thoughtworks.sample.page.Page;
+import com.thoughtworks.timesheets.driver.Browser;
+import com.thoughtworks.timesheets.framework.Autowired;
+import com.thoughtworks.timesheets.page.Page;
 
 /**
  * @understands how to clean up after each test

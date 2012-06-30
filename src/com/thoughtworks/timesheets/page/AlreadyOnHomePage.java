@@ -1,8 +1,7 @@
-package com.thoughtworks.sample.page;
+package com.thoughtworks.timesheets.page;
 
-import com.thoughtworks.sample.driver.Browser;
-import com.thoughtworks.sample.states.CurrentPageState;
-import com.thoughtworks.sample.states.PageName;
+import com.thoughtworks.timesheets.driver.Browser;
+import com.thoughtworks.timesheets.states.CurrentPageState;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

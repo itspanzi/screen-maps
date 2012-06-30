@@ -1,13 +1,12 @@
-package com.thoughtworks.sample;
+package com.thoughtworks.timesheets;
 
-import com.thoughtworks.sample.driver.Browser;
-import com.thoughtworks.sample.framework.Autowired;
-import com.thoughtworks.sample.page.AlreadyOnHomePage;
-import com.thoughtworks.sample.page.AlreadyOnLoginPage;
-import com.thoughtworks.sample.page.OnHomePage;
-import com.thoughtworks.sample.page.OnLoginPage;
-import com.thoughtworks.sample.states.CurrentPageState;
-import com.thoughtworks.util.CleanupUtil;
+import com.thoughtworks.timesheets.driver.Browser;
+import com.thoughtworks.timesheets.framework.Autowired;
+import com.thoughtworks.timesheets.page.AlreadyOnLoginPage;
+import com.thoughtworks.timesheets.page.OnHomePage;
+import com.thoughtworks.timesheets.page.OnLoginPage;
+import com.thoughtworks.timesheets.states.CurrentPageState;
+import com.thoughtworks.timesheets.util.CleanupUtil;
 import org.junit.After;
 import org.junit.Test;
 

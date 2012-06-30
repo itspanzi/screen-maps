@@ -1,8 +1,7 @@
-package com.thoughtworks.sample.page;
+package com.thoughtworks.timesheets.page;
 
-import com.thoughtworks.sample.driver.Browser;
-import com.thoughtworks.sample.states.CurrentPageState;
-import com.thoughtworks.sample.states.PageName;
+import com.thoughtworks.timesheets.driver.Browser;
+import com.thoughtworks.timesheets.states.CurrentPageState;
 
 /**
  * @understands a state where the browser is already pointing to the Login Page. Typically, this is the case if you

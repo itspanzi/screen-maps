@@ -1,6 +1,6 @@
-package com.thoughtworks.sample.page.exceptions;
+package com.thoughtworks.timesheets.page.exceptions;
 
-import com.thoughtworks.sample.states.PageName;
+import com.thoughtworks.timesheets.states.PageName;
 
 /**
  * @understands Representing a state where the browser does not have the expected page open

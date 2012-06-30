@@ -1,4 +1,4 @@
-package com.thoughtworks.sample.driver;
+package com.thoughtworks.timesheets.driver;
 
 /**
  * @understands A UI element which can be interacted with

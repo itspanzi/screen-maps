@@ -1,4 +1,4 @@
-package com.thoughtworks.sample.states;
+package com.thoughtworks.timesheets.states;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

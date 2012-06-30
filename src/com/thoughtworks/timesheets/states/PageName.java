@@ -1,4 +1,4 @@
-package com.thoughtworks.sample.states;
+package com.thoughtworks.timesheets.states;
 
 /**
  * @understands The different pages in the application

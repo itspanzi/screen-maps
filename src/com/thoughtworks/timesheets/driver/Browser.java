@@ -1,4 +1,4 @@
-package com.thoughtworks.sample.driver;
+package com.thoughtworks.timesheets.driver;
 
 /**
  * @understands The abstraction of a Browser in a testing driver
