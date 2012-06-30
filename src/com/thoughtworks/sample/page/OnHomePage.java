@@ -13,20 +13,23 @@ import static org.junit.Assert.assertThat;
  */
 public class OnHomePage extends Page {
 
-    private static final String URL = "/app/home";
-
     public OnHomePage(Browser browser, CurrentPageState currentPageState) {
         super(browser, currentPageState);
     }
 
     @Override
-    protected void setCurrentPageState(CurrentPageState currentPageState) {
-        currentPageState.onPage(PageName.HOME_PAGE);
+    protected void open() {
+        browser.navigateTo(getUrl());
     }
 
     @Override
-    protected void open() {
-        browser.navigateTo(URL);
+    protected String getUrl() {
+        return "/app/home";
+    }
+
+    @Override
+    protected PageName getPageName() {
+        return PageName.HOME_PAGE;
     }
 
     public String currentlyLoggedInUser() {
@@ -35,9 +38,5 @@ public class OnHomePage extends Page {
 
     private Element elementCurrentUser() {
         return browser.div("loggedInUser");
-    }
-
-    public boolean isOnLoginPage() {
-        return browser.getUrl().contains(OnLoginPage.URL);
     }
 }

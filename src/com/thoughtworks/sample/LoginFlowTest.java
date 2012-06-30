@@ -2,6 +2,8 @@ package com.thoughtworks.sample;
 
 import com.thoughtworks.sample.driver.Browser;
 import com.thoughtworks.sample.framework.Autowired;
+import com.thoughtworks.sample.page.AlreadyOnHomePage;
+import com.thoughtworks.sample.page.AlreadyOnLoginPage;
 import com.thoughtworks.sample.page.OnHomePage;
 import com.thoughtworks.sample.page.OnLoginPage;
 import com.thoughtworks.sample.states.CurrentPageState;
@@ -34,7 +36,7 @@ public class LoginFlowTest {
 
     @Test
     public void shouldTakeToLoginPageIfNotLoggedIn() {
-        OnHomePage onHomePage = new OnHomePage(browser, currentPageState);
-        assertThat(onHomePage.isOnLoginPage(), is(true));
+        new OnHomePage(browser, currentPageState);
+        new AlreadyOnLoginPage(browser, currentPageState);
     }
 }

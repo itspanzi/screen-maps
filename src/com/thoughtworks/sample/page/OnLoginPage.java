@@ -10,25 +10,33 @@ import com.thoughtworks.sample.states.PageName;
  */
 public class OnLoginPage extends Page {
 
-    public static final String URL = "/app/login";
-
     public OnLoginPage(Browser browser, CurrentPageState currentPageState) {
         super(browser, currentPageState);
     }
 
     @Override
-    protected void setCurrentPageState(CurrentPageState currentPageState) {
-        currentPageState.onPage(PageName.LOGIN_PAGE);
+    protected void open() {
+        browser.navigateTo(getUrl());
     }
 
     @Override
-    protected void open() {
-        browser.navigateTo(URL);
+    protected String getUrl() {
+        return "/app/login";
+    }
+
+    @Override
+    protected PageName getPageName() {
+        return PageName.LOGIN_PAGE;
     }
 
     public void enterUserNameAndPassword(String username, String password) {
         elementUsername().setText(username);
         elementPassword().setPassword(password);
+    }
+
+    public OnHomePage submit() {
+        elementSubmit().click();
+        return new AlreadyOnHomePage(browser, currentPageState);
     }
 
     private Element elementPassword() {
@@ -37,12 +45,6 @@ public class OnLoginPage extends Page {
 
     private Element elementUsername() {
         return browser.text("username");
-    }
-
-    public OnHomePage submit() {
-        elementSubmit().click();
-        currentPageState.onPage(PageName.HOME_PAGE);
-        return new AlreadyOnHomePage(browser, currentPageState);
     }
 
     private Element elementSubmit() {

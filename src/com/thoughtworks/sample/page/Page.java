@@ -2,7 +2,9 @@ package com.thoughtworks.sample.page;
 
 import com.thoughtworks.sample.driver.Browser;
 import com.thoughtworks.sample.driver.Element;
+import com.thoughtworks.sample.page.exceptions.IllegalScreenStateException;
 import com.thoughtworks.sample.states.CurrentPageState;
+import com.thoughtworks.sample.states.PageName;
 
 /**
  * @understands what it means to be a page in the application
@@ -15,12 +17,20 @@ public abstract class Page {
         this.currentPageState = currentPageState;
         this.browser = browser;
         open();
-        setCurrentPageState(currentPageState);
+        currentPageState.onPage(getPageName());
     }
 
-    protected abstract void setCurrentPageState(CurrentPageState currentPageState);
-
     protected abstract void open();
+
+    protected abstract String getUrl();
+
+    protected abstract PageName getPageName();
+
+    public void alreadyOnPageCheck() {
+        if (!browser.getUrl().contains(getUrl())) {
+            throw new IllegalScreenStateException(getPageName(), getUrl(), browser.getUrl());
+        }
+    }
 
     public static void logout(Browser browser) {
         elementLogoutLink(browser).click();
