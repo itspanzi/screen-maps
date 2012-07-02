@@ -15,11 +15,6 @@ public class OnLoginPage extends Page {
     }
 
     @Override
-    protected void open() {
-        browser.navigateTo(getUrl());
-    }
-
-    @Override
     protected String getUrl() {
         return "/app/login";
     }

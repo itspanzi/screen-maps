@@ -20,11 +20,13 @@ public abstract class Page {
         currentPageState.onPage(getPageName());
     }
 
-    protected abstract void open();
-
     protected abstract String getUrl();
 
     protected abstract PageName getPageName();
+
+    protected void open() {
+        browser.navigateTo(getUrl());
+    }
 
     public void alreadyOnPageCheck() {
         if (!browser.getUrl().contains(getUrl())) {

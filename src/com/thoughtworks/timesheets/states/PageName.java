@@ -4,5 +4,5 @@ package com.thoughtworks.timesheets.states;
  * @understands The different pages in the application
  */
 public enum PageName {
-    LOGIN_PAGE, HOME_PAGE
+    LOGIN_PAGE, HOME_PAGE, NEW_TIME_SHEET_PAGE
 }

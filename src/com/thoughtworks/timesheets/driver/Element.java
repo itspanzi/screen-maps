@@ -11,4 +11,10 @@ public interface Element {
     void click();
 
     String getText();
+
+    Element in(Element parent);
+
+    Element under(Element topElement);
+
+    boolean exists();
 }
