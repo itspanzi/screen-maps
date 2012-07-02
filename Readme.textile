@@ -1,0 +1,31 @@
+h2. Screen Maps - Page Objects on steroids
+
+Screen Map is a design pattern for functional tests that extends the idea of a page object pattern by making page objects
+aware of navigation.
+
+h3. Traditional Page Objects
+
+Page object pattern has the following traits:
+
+* Each page represented using an object
+* Every UI element represented using private methods or fields
+* Sometimes, the interactions possible on a page are exposed as methods on the object
+
+h3. Screen Maps
+
+Typically, in applications, navigation between pages in a business scenario is quite common. This can be modelled into the
+functional test suites by using the Screen Map pattern.
+
+Extension to the Page object:
+
+* Creating a new page object navigates to that page
+* Any action that navigates to a page is done in a method which returns an object of that new page
+* The returned object's creation does not navigate. Instead, it validates that the browser is in fact pointing to this page
+
+h3. Why Screen Maps?
+
+It emphasizes on *DRY* and on exposing interactions as behaviour on page classes. Modeling a user's scenario as page transitions
+is very useful. It becomes quite natural in terms of writing code and reusing code.
+
+This is very powerful because adding a new test would involve knowing the right screen to start with and then knowing what
+interaction takes to another screen etc. This way, you are completely mimicking exactly what an end user does.
